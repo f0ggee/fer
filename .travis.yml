@@ -1,7 +1,17 @@
+language: go
+
 stages:
-   -test
+  - build
+  - test
 
 jobs:
-    include:
-    -stage: test
-    sript: echo "test run"
+  include:
+    - stage: build
+      name: "Сборка проекта"
+      script:
+        - echo "🛠 Выполняется сборка..."
+
+    - stage: test
+      name: "Тестирование проекта"
+      script:
+        - echo "✅ Запускаются тесты..."
